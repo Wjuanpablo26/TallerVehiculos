@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="421.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uniquindio.tallervehiculos.View.ReservaViewController">
+    <!-- Campos de entrada para los datos de la reserva -->
+    <DatePicker fx:id="fechaInicioPicker" layoutX="20" layoutY="20" promptText="Fecha Inicio" />
+
+    <TextField fx:id="cantidadDiasField" layoutX="200" layoutY="20" promptText="Cantidad de Días" />
+
+    <TextField fx:id="tipoVehiculoField" layoutX="20" layoutY="60" promptText="Tipo Vehículo" />
+
+    <TextField fx:id="placaVehiculoField" layoutX="200" layoutY="60" promptText="Placa Vehículo" />
+
+    <ComboBox fx:id="clienteComboBox" layoutX="20" layoutY="100" promptText="Cliente" />
+
+    <TextField fx:id="precioField" layoutX="200" layoutY="100" promptText="Precio" />
+
+    <!-- Tabla para mostrar las reservas -->
+    <TableView fx:id="reservaTable" layoutX="20" layoutY="160" prefHeight="200" prefWidth="400">
+        <columns>
+            <TableColumn fx:id="fechaInicioColumn" prefWidth="100" text="Fecha Inicio" />
+            <TableColumn fx:id="cantidadDiasColumn" prefWidth="100" text="Cantidad Días" />
+            <TableColumn fx:id="tipoVehiculoColumn" prefWidth="100" text="Tipo Vehículo" />
+            <TableColumn fx:id="placaVehiculoColumn" prefWidth="100" text="Placa Vehículo" />
+            <TableColumn fx:id="clienteColumn" prefWidth="100" text="Cliente" />
+            <TableColumn fx:id="precioColumn" prefWidth="100" text="Precio" />
+        </columns>
+    </TableView>
+
+    <!-- Botones de acción -->
+    <Button layoutX="20" layoutY="380" onAction="#handleAgregar" text="Agregar" />
+    <Button layoutX="100" layoutY="380" onAction="#handleActualizar" text="Actualizar" />
+    <Button layoutX="180" layoutY="380" onAction="#handleEliminar" text="Eliminar" />
+    <Button layoutX="260" layoutY="380" onAction="#handleLimpiar" text="Limpiar" />
+
+</AnchorPane>

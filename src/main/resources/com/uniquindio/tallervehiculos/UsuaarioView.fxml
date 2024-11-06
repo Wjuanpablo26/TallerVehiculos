@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.uniquindio.tallervehiculos.View.UsuarioViewController">
+    <!-- Formulario de Cliente -->
+    <VBox layoutX="20" layoutY="20" spacing="10">
+        <HBox spacing="10">
+            <Label text="Nombre:" />
+            <TextField fx:id="nombreField" promptText="Ingrese el nombre" />
+        </HBox>
+
+        <HBox spacing="10">
+            <Label text="Password:" />
+            <PasswordField fx:id="passwordField" promptText="Ingrese la contraseña" />
+        </HBox>
+
+        <!-- Botones de CRUD -->
+        <HBox spacing="20">
+            <Button onAction="#handleAgregarCliente" text="Agregar Cliente" />
+            <Button onAction="#handleActualizarCliente" text="Actualizar Cliente" />
+            <Button onAction="#handleEliminarCliente" text="Eliminar Cliente" />
+        </HBox>
+    </VBox>
+
+    <!-- Tabla de Clientes -->
+    <TableView fx:id="clientesTable" layoutX="20" layoutY="150" prefWidth="600">
+        <columns>
+            <TableColumn fx:id="nombreColumn" prefWidth="200" text="Nombre" />
+            <TableColumn fx:id="passwordColumn" prefWidth="200" text="Contraseña" />
+            <TableColumn fx:id="reservasColumn" prefWidth="200" text="Reservas" />
+        </columns>
+    </TableView>
+
+</AnchorPane>

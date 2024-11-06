@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" tabClosingPolicy="UNAVAILABLE" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/23">
+  <tabs>
+    <Tab text="Usuario">
+      <content>
+        <fx:include source="UsuaarioView.fxml"/>
+      </content>
+    </Tab>
+    <Tab text="Vehiculos">
+      <content>
+        <fx:include source="VehiculoView.fxml"/>
+      </content>
+    </Tab>
+      <Tab text="Reserva">
+        <content>
+        <fx:include source="ReservaView.fxml"/>
+        </content>
+      </Tab>
+  </tabs>
+</TabPane>

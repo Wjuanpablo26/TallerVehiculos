@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane xmlns="http://javafx.com/javafx"
+            xmlns:fx="http://javafx.com/fxml"
+            fx:controller="com.uniquindio.tallervehiculos.View.VehiculoViewController"
+            prefHeight="400.0" prefWidth="600.0">
+    <!-- Campos comunes para todos los vehículos -->
+    <Label text="Placa:" layoutX="20" layoutY="20"/>
+    <TextField fx:id="placaField" layoutX="100" layoutY="20"/>
+
+    <Label text="Marca:" layoutX="20" layoutY="60"/>
+    <TextField fx:id="marcaField" layoutX="100" layoutY="60"/>
+
+    <Label text="Modelo:" layoutX="20" layoutY="100"/>
+    <TextField fx:id="modeloField" layoutX="100" layoutY="100"/>
+
+    <Label text="Fecha Fabricación:" layoutX="20" layoutY="140"/>
+    <DatePicker fx:id="fechaFabricacionPicker" layoutX="150" layoutY="140"/>
+
+    <!-- ComboBox para seleccionar el tipo de vehículo -->
+    <Label text="Tipo de Vehículo:" layoutX="20" layoutY="180"/>
+    <ComboBox fx:id="tipoVehiculoComboBox" layoutX="150" layoutY="180"
+              onAction="#handleTipoVehiculoSeleccionado"/>
+
+    <!-- Campos específicos para Camioneta -->
+    <Label fx:id="capacidadCargaLabel" text="Capacidad de Carga:" layoutX="20" layoutY="220" visible="false"/>
+    <TextField fx:id="capacidadCargaField" layoutX="150" layoutY="220" visible="false"/>
+
+    <!-- Campos específicos para Auto -->
+    <Label fx:id="numeroPuertasLabel" text="Número de Puertas:" layoutX="20" layoutY="220" visible="false"/>
+    <TextField fx:id="numeroPuertasField" layoutX="150" layoutY="220" visible="false"/>
+
+    <!-- Campos específicos para Moto -->
+    <Label fx:id="cajaCambiosLabel" text="Caja de Cambios:" layoutX="20" layoutY="220" visible="false"/>
+    <ComboBox fx:id="cajaCambiosComboBox" layoutX="150" layoutY="220" visible="false"/>
+
+    <!-- Botones para CRUD -->
+    <Button text="Agregar" layoutX="20" layoutY="300" onAction="#handleAgregar"/>
+    <Button text="Actualizar" layoutX="100" layoutY="300" onAction="#handleActualizar"/>
+    <Button text="Eliminar" layoutX="180" layoutY="300" onAction="#handleEliminar"/>
+    <Button text="Limpiar" layoutX="260" layoutY="300" onAction="#handleLimpiar"/>
+
+    <!-- Tabla para mostrar los vehículos registrados -->
+    <TableView fx:id="vehiculoTable" layoutX="20" layoutY="340" prefWidth="400" prefHeight="200">
+        <columns>
+            <TableColumn fx:id="placaColumn" text="Placa" prefWidth="100"/>
+            <TableColumn fx:id="marcaColumn" text="Marca" prefWidth="100"/>
+            <TableColumn fx:id="modeloColumn" text="Modelo" prefWidth="100"/>
+            <TableColumn fx:id="fechaFabricacionColumn" text="Fecha Fabricación" prefWidth="100"/>
+
+            <!-- Nuevas columnas específicas para vehículos -->
+            <TableColumn fx:id="capacidadCargaColumn" text="Capacidad de Carga" prefWidth="100" visible="false"/>
+            <TableColumn fx:id="numeroPuertasColumn" text="Número de Puertas" prefWidth="100" visible="false"/>
+            <TableColumn fx:id="cajaCambiosColumn" text="Caja de Cambios" prefWidth="100" visible="false"/>
+
+        </columns>
+    </TableView>
+</AnchorPane>
